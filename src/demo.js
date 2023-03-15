@@ -12,8 +12,7 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = {
   page: {
-    height: "97vh",
-    //overflowY: "scroll",
+    height: "100vh",
     width: "100%",
     margin: 0,
     border: "5px solid blueviolet"
@@ -23,7 +22,8 @@ const styles = {
     border: "5px solid silver"
   },
   box: {
-    height: "100%",
+    // height: "100%",
+    flex: "100 .1 20vh",
     border: "5px solid blue"
   },
   header: {
@@ -31,19 +31,20 @@ const styles = {
     border: "5px solid cornflowerblue"
   },
   tableWrapper: {
-    height: "100%",
+    // height: "100%",
+    flex: "100 .1 20vh",
     overflowY: "scroll",
     border: "5px solid red"
   },
-  // tableContainer: {
-  //   height: "100%",
-  //   border: "5px solid green"
-  // },
-  // table: {
-  //   border: "5px solid pink",
-  //   stickyHeader: true
-  // },
-  // tableBody: {},
+  tableContainer: {
+    height: "100%",
+    border: "5px solid green"
+  },
+  table: {
+    border: "5px solid pink",
+    stickyHeader: true
+  },
+  tableBody: {},
   row: {
     height: "50px",
     border: "5px solid green"
@@ -73,6 +74,8 @@ export default function BasicTable() {
                   <br />
                   line 2
                   <br />
+                  line 3
+                  <br />
                 </Typography>
                 <Box sx={styles.tableWrapper}>
                   {/* <Typography sx={styles.header}>
@@ -80,7 +83,7 @@ export default function BasicTable() {
                     <br />
                     line 2
                     <br />
-                  </Typography> */}
+                  </Typography>
                   <Box sx={styles.row}>content 1</Box>
                   <Box sx={styles.row}>content 2</Box>
                   <Box sx={styles.row}>content 3</Box>
@@ -90,11 +93,11 @@ export default function BasicTable() {
                   <Box sx={styles.row}>content 7</Box>
                   <Box sx={styles.row}>content 8</Box>
                   <Box sx={styles.row}>content 9</Box>
-                  <Box sx={styles.row}>content 10</Box>
-                  {/* <TableContainer sx={styleClasses.tableContainer}>
+                  <Box sx={styles.row}>content 10</Box> */}
+                  <TableContainer sx={styles.tableContainer}>
                     <Table
-                      stickyHeader
-                      sx={styleClasses.table}
+                      stickyHeader={true}
+                      sx={styles.table}
                       aria-label="simple table"
                     >
                       <TableHead>
@@ -106,7 +109,7 @@ export default function BasicTable() {
                           <TableCell align="right">Protein&nbsp;(g)</TableCell>
                         </TableRow>
                       </TableHead>
-                      <TableBody sx={styleClasses.tableBody}>
+                      <TableBody sx={styles.tableBody}>
                         {rows.map((row) => (
                           <TableRow key={row.name}>
                             <TableCell component="th" scope="row">
@@ -120,7 +123,7 @@ export default function BasicTable() {
                         ))}
                       </TableBody>
                     </Table>
-                  </TableContainer> */}
+                  </TableContainer>
                 </Box>
               </Stack>
             </Box>
