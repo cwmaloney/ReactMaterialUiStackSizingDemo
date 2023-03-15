@@ -13,45 +13,47 @@ import Typography from "@material-ui/core/Typography";
 const styles = {
   page: {
     height: "97vh",
-    border: "8px solid pink"
+    //overflowY: "scroll",
+    width: "100%",
+    margin: 0,
+    border: "5px solid blueviolet"
   },
   stack: {
     height: "100%",
-    border: "8px solid red"
+    border: "5px solid silver"
   },
   box: {
-    //height: "100%",
-    flexGrow: 1,
-    border: "8px solid blue"
+    height: "100%",
+    border: "5px solid blue"
   },
   header: {
     display: "hidden",
-    border: "8px solid cornflowerblue"
+    border: "5px solid cornflowerblue"
   },
-  tablewrapper: {
+  tableWrapper: {
     height: "100%",
     overflowY: "scroll",
-    border: "8px solid black"
+    border: "5px solid red"
   },
-  tableContainer: {
-    height: "100%",
-    border: "8px solid green"
-  },
-  table: {
-    border: "8px solid navy",
-    stickyHeader: true
-  },
-  tableBody: {},
+  // tableContainer: {
+  //   height: "100%",
+  //   border: "5px solid green"
+  // },
+  // table: {
+  //   border: "5px solid pink",
+  //   stickyHeader: true
+  // },
+  // tableBody: {},
   row: {
-    height: "100px",
-    border: "8px solid green"
+    height: "50px",
+    border: "5px solid green"
   }
 };
 
 export default function BasicTable() {
   return (
     <Box sx={styles.page}>
-      <Stack sx={styles.stack}>
+      <Stack direction="column" sx={styles.stack}>
         <Typography sx={styles.header}>
           line 1
           <br />
@@ -59,26 +61,26 @@ export default function BasicTable() {
           <br />
         </Typography>
         <Box sx={styles.box}>
-          <Stack sx={styles.stack}>
+          <Stack direction="column" sx={styles.stack}>
             <Typography sx={styles.header}>
               line 1
               <br />
             </Typography>
             <Box sx={styles.box}>
-              <Stack sx={styles.stack}>
+              <Stack direction="column" sx={styles.stack}>
                 <Typography sx={styles.header}>
                   line 1
                   <br />
                   line 2
                   <br />
                 </Typography>
-                <Box sx={styles.tablewrapper}>
-                  <Typography sx={styles.header}>
+                <Box sx={styles.tableWrapper}>
+                  {/* <Typography sx={styles.header}>
                     line 1
                     <br />
                     line 2
                     <br />
-                  </Typography>
+                  </Typography> */}
                   <Box sx={styles.row}>content 1</Box>
                   <Box sx={styles.row}>content 2</Box>
                   <Box sx={styles.row}>content 3</Box>
@@ -86,6 +88,9 @@ export default function BasicTable() {
                   <Box sx={styles.row}>content 5</Box>
                   <Box sx={styles.row}>content 6</Box>
                   <Box sx={styles.row}>content 7</Box>
+                  <Box sx={styles.row}>content 8</Box>
+                  <Box sx={styles.row}>content 9</Box>
+                  <Box sx={styles.row}>content 10</Box>
                   {/* <TableContainer sx={styleClasses.tableContainer}>
                     <Table
                       stickyHeader
